@@ -3,7 +3,7 @@ output "function" {
 }
 
 output "function_name" {
-  value = local.prefix
+  value = var.name
 }
 
 output "role" {
