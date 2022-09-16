@@ -1,4 +1,4 @@
-variable "prefix" {
+variable "name" {
   type = string
 }
 
@@ -47,6 +47,5 @@ variable "vpc_config" {
 
 locals {
   module_name     = basename(abspath(path.module))
-  prefix          = var.prefix
-  lambda_zip_file = "${path.module}/${local.prefix}-${local.module_name}.zip"
+  lambda_zip_file = "${path.module}/${local.module_name}-${var.name}.zip"
 }
