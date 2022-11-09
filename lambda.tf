@@ -21,6 +21,8 @@ resource "aws_lambda_function" "lambda" {
   runtime = var.runtime
   handler = var.handler
 
+  layers = var.layers
+
   s3_bucket        = var.source_bucket
   s3_key           = var.source_bucket == null ? null : var.source_dir
   filename         = var.source_bucket == null ? local.lambda_zip_file : null
