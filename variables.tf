@@ -27,6 +27,11 @@ variable "memory_size" {
   type = number
 }
 
+variable "architecture" {
+  type = string
+  default = null
+}
+
 variable "layers" {
   type = list(string)
   default = null

@@ -21,6 +21,8 @@ resource "aws_lambda_function" "lambda" {
   runtime = var.runtime
   handler = var.handler
 
+  architectures = var.architecture == null ? null : [ var.architecture ]
+
   layers = var.layers
 
   s3_bucket        = var.source_bucket
